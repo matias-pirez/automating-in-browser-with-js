@@ -1,9 +1,12 @@
 
 
-Automating in the browser with javascript 
+#Automating in the Browser Using Javascript 
+
+Link: https://testautomationu.applitools.com/automating-in-the-browser-using-javascript/
 
 
-todo vanilla javascript:  http://todomvc.com/examples/vanillajs
+
+Web utilizada- todo vanilla javascript:  http://todomvc.com/examples/vanillajs
 
 
 document.querySelectorAll() -- selecciona todos los que encuentre
@@ -39,5 +42,35 @@ document.querySelector("ul.todo-list > li:nth-child(1) .edit").dispatchEvent(new
 
 
 ----Practicar la lección de For loops. Definir Gherkins para Todomvc.
--Ir plasmando las cosas en un git. 
 
+## Chapter 5 - For Loops
+Cómo hacer para seleccionar todos los items de la lista de forma automática: 
+Un for loop nos sirve para eso. Básicamente lo que hace es, se establece una variable como contador, y mientras se compla la condición hace algo que le indiquemos. 
+
+Importantísimo la estructura y no olvidar de incrementar el valor del contador con el ++. 
+
+Ejemplo: Esto nos escribe en la consola Hola1, Hola2, hasta 20.
+
+for (counter=1; counter <=20, counter++){
+	console.log("hola"+counter)
+}
+
+
+Entonces por ejemplo si tengo este selector .todo-list .toggle, en la página TODOMVC, este selector nos selecciona todos los toogles de marcar/desmarcar como completo.
+
+Para seleccionarlos todos con js hago esto: 
+document.querySelectorAll(".todo-list .toggle")
+Me devuelve un array con los 6 toggles correspondientes a los items que tengo en la lista.
+
+¿Cómo lo puedo aplicar dentro del for?
+
+Guardo ese query en una variable:
+
+var toggles = document.querySelectorAll(".todo-list .toggle")
+
+Si hago un toggles.length me devuelve la cantidad de valores del array, en este caso 6.
+Entonces el for me queda, que arranca en el primer toggle (posicion 0) y lo sigue haciendo hasta que la posisición sea el largo o sea 6. Y para cada uno de esos, me va a hacer click en el toggle. 
+
+for (togglepos=0; togglepos<toggles.length; togglepos++){
+	toggles[togglepos].click();
+}
