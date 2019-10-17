@@ -74,3 +74,35 @@ Entonces el for me queda, que arranca en el primer toggle (posicion 0) y lo sigu
 for (togglepos=0; togglepos<toggles.length; togglepos++){
 	toggles[togglepos].click();
 }
+
+
+##If statements
+
+Aca combinamos el for anterior con un if. 
+
+for (togglepos=0; togglepos<toggles.length; togglepos++){
+	if (togglepos%2==1){
+		toggles[togglepos].click();
+	}
+
+}
+
+Esto se fija que si el modulo de la posicion es igual a 1, o sea 0%2 para la primera, es igual a 0, entonces no lo clickea porque es false. Estaria clickeando las posiciones pares 2, 4. Se pone igual a 1, poruqe la primera posicion es 0 y no 1. 
+
+Se podria hacer sin el if, incrementando en el for en 2 en vez de uno // togglepos+=2
+
+Tambien se podria hacer incrementando uno, pero usando una variable temporal. 
+var toggleit = false
+for (togglepos=0; togglepos<toggles.length; togglepos++){
+	if (toggleit){
+		toggles[togglepos].click();
+	}
+	toggleit=!toggleit // esto transforma toggleit en su opuesto (true para la priemera vez)
+}
+
+
+## Snippet view
+
+En la consola de chrome hay una opcion snippets dentro de Sources que te permite guardar codigo, ejecutarlo y  debuguearlo desde ahi mismo. 
+
+
