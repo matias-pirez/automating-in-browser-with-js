@@ -76,7 +76,7 @@ for (togglepos=0; togglepos<toggles.length; togglepos++){
 }
 
 
-##If statements
+## If statements
 
 Aca combinamos el for anterior con un if. 
 
@@ -103,6 +103,28 @@ for (togglepos=0; togglepos<toggles.length; togglepos++){
 
 ## Snippet view
 
-En la consola de chrome hay una opcion snippets dentro de Sources que te permite guardar codigo, ejecutarlo y  debuguearlo desde ahi mismo. 
+En la consola de chrome hay una opcion snippets dentro de Sources que te permite guardar codigo, ejecutarlo y  debuguearlo desde ahi mismo.
 
 
+## Bookmarklets 
+
+Se puede ejecutar codigo javascript desde un marcador de chrome. En URL se debe agregar el codigo que tiene el siguiente formato
+
+javascript:(code)()
+
+Ejemplo para crear n toDos
+
+javascript: (function (){
+    max = prompt(how many todos?)
+    if (max){
+        for (x=0; x<=max; x++){
+            setTimeout(function(name){
+                document.querySelector('input.new-todo').value = name;
+                document.querySelector('input.new-todo').dispatchEvent(new Event {'change',
+                    'bubbles':true
+                })
+            })
+            x*100, "todo " + x)
+        }
+    }
+})
