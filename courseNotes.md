@@ -128,3 +128,15 @@ javascript: (function (){
         }
     }
 })()
+
+
+## Bots in the browser
+Pending practise here.
+
+## Resourses 
+
+https://www.eviltester.com/page/onlinetraining/testautomationujs/
+
+## Course certificate
+
+https://testautomationu.applitools.com/certificate/?id=3cd85007
